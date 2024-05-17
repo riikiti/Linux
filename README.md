@@ -1,6 +1,6 @@
 # Linux
 
-## Установка всего
+## Setup for Laravel project
 
 ### NGINX
 - `sudo apt update`
