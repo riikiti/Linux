@@ -89,6 +89,7 @@ Supervisor conf
  stdout_logfile=/var/www/bikini/source-code/backend/public/worker.log
 
 Restart workers 
+
 `stopwaitsecs=3600`
 
 `sudo supervisorctl reread`
