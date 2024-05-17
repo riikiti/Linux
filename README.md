@@ -102,7 +102,7 @@ Restart workers
 
 ### For Spa NGINX
 `
-  location ~* \.(?:css|js|jpg|svg)$ {
+        location ~* \.(?:css|js|jpg|svg)$ {
             expires 30d;
             add_header Cache-Control "public";
         }
