@@ -99,3 +99,16 @@ Restart workers
 
 ### Mysql enter
 `mysql -u root -p {database_name}`
+
+### For Spa NGINX
+`
+  location ~* \.(?:css|js|jpg|svg)$ {
+            expires 30d;
+            add_header Cache-Control "public";
+        }
+
+        location ~* \.(?:json)$ {
+            expires 1d;
+            add_header Cache-Control "public";
+        }
+`
