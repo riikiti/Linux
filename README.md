@@ -65,6 +65,8 @@
 - `certbot —nginx -d security-diplom.ru`
 
 ### Crontab 
+`crontab -e`
+
 - new sertificate `0 0 * * 1 certbot renew —quiet ` 
 - schedule:run `* * * * * php /var/www/notifications/artisan schedule:run »/dev/null`
 - storage `* * * * * chown -R www-data:www-data /var/www/notifications/storage`
