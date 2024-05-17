@@ -50,12 +50,12 @@
  - `cp .env.example .env`
  - `php artisan key:generate`
  - `php artisan storage:link`
- - If laravel.log error
-    --`chmod -R 755 /var/www/security/storage`
-    --`chmod -R 755 /var/www/security/storage/logs`
-    --`chown -R www-data:www-data /var/www/security/storage`
-    --`chown -R www-data:www-data /var/www/security/storage/logs`
-    --`touch /var/www/security/storage/logs/laravel.log`
+   If laravel.log error
+   - `chmod -R 755 /var/www/security/storage`
+   -`chmod -R 755 /var/www/security/storage/logs`
+   -`chown -R www-data:www-data /var/www/security/storage`
+   -`chown -R www-data:www-data /var/www/security/storage/logs`
+   -`touch /var/www/security/storage/logs/laravel.log`
 
 ### New nginx link
 `ln -s /etc/nginx/sites-available/security security` (be here `/etc/nginx/sites-enabled/security`) `
@@ -76,17 +76,17 @@
 
 Supervisor conf 
 
-[program:laravel-worker]
-process_name=%(program_name)s_%(process_num)02d
-command=php /var/www/bikini/source-code/backend/artisan queue:work —sleep=3 —tries=3 —max-time=7200
-autostart=true
-autorestart=true
-stopasgroup=true
-killasgroup=true
-user=root
-numprocs=8
-redirect_stderr=true
-stdout_logfile=/var/www/bikini/source-code/backend/public/worker.log
+ [program:laravel-worker]
+ process_name=%(program_name)s_%(process_num)02d
+ command=php /var/www/bikini/source-code/backend/artisan queue:work —sleep=3 —tries=3 —max-time=7200
+ autostart=true
+ autorestart=true
+ stopasgroup=true
+ killasgroup=true
+ user=root
+ numprocs=8
+ redirect_stderr=true
+ stdout_logfile=/var/www/bikini/source-code/backend/public/worker.log
 
 Restart workers 
 `stopwaitsecs=3600`
