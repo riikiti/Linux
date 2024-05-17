@@ -51,11 +51,11 @@
  - `php artisan key:generate`
  - `php artisan storage:link`
  - If laravel.log error
-  - -`chmod -R 755 /var/www/security/storage`
-  - -`chmod -R 755 /var/www/security/storage/logs`
-  - -`chown -R www-data:www-data /var/www/security/storage`
-  - -`chown -R www-data:www-data /var/www/security/storage/logs`
-  - -`touch /var/www/security/storage/logs/laravel.log`
+    --`chmod -R 755 /var/www/security/storage`
+    --`chmod -R 755 /var/www/security/storage/logs`
+    --`chown -R www-data:www-data /var/www/security/storage`
+    --`chown -R www-data:www-data /var/www/security/storage/logs`
+    --`touch /var/www/security/storage/logs/laravel.log`
 
 ### New nginx link
 `ln -s /etc/nginx/sites-available/security security` (be here `/etc/nginx/sites-enabled/security`) `
