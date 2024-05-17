@@ -4,8 +4,8 @@
 
 ### NGINX
 - `sudo apt update`
-- sudo apt install nginx`
-- sudo systemctl reload nginx`
+- `sudo apt install nginx`
+- `sudo systemctl reload nginx`
 
 ### MYSQL
 - `sudo apt install mysql-server`
