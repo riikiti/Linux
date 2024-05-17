@@ -96,3 +96,6 @@ Restart workers
 `sudo supervisorctl update`
 
 `sudo supervisorctl start "laravel-worker:*"`
+
+### Mysql enter
+`mysql -u root -p {database_name}`
