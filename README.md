@@ -112,4 +112,23 @@ Restart workers
             expires 1d;
             add_header Cache-Control "public";
         }
+### Nginx for backend (Laravel)
 
+        root /var/www/security/public;
+        
+        index index.php;
+
+        server_name security-diplom.ru www.security-diplom.ru;
+
+        location / {
+                try_files $uri $uri/ /index.php?$query_string;
+        }
+      
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+        #
+        #       # With php-fpm (or other unix sockets):
+                fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        }
