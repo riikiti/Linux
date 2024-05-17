@@ -51,11 +51,11 @@
  - `php artisan key:generate`
  - `php artisan storage:link`
  - If laravel.log error
- 1)`chmod -R 755 /var/www/security/storage`
- 2)`chmod -R 755 /var/www/security/storage/logs`
- 3)`chown -R www-data:www-data /var/www/security/storage`
- 4)`chown -R www-data:www-data /var/www/security/storage/logs`
- 5)`touch /var/www/security/storage/logs/laravel.log`
+  - -`chmod -R 755 /var/www/security/storage`
+  - -`chmod -R 755 /var/www/security/storage/logs`
+  - -`chown -R www-data:www-data /var/www/security/storage`
+  - -`chown -R www-data:www-data /var/www/security/storage/logs`
+  - -`touch /var/www/security/storage/logs/laravel.log`
 
 ### New nginx link
 `ln -s /etc/nginx/sites-available/security security` (be here `/etc/nginx/sites-enabled/security`) `
@@ -75,7 +75,7 @@
 `sudo apt-get install supervisor`
 
 Supervisor conf 
-`
+
 [program:laravel-worker]
 process_name=%(program_name)s_%(process_num)02d
 command=php /var/www/bikini/source-code/backend/artisan queue:work —sleep=3 —tries=3 —max-time=7200
@@ -86,7 +86,7 @@ killasgroup=true
 user=root
 numprocs=8
 redirect_stderr=true
-stdout_logfile=/var/www/bikini/source-code/backend/public/worker.log`
+stdout_logfile=/var/www/bikini/source-code/backend/public/worker.log
 
 Restart workers 
 `stopwaitsecs=3600`
@@ -101,15 +101,15 @@ Restart workers
 `mysql -u root -p {database_name}`
 
 ### For Spa NGINX
-`
+
         location ~* \.(?:css|js|jpg|svg)$ {
             expires 30d;
             add_header Cache-Control "public";
         }
-`
-`
+
+
         location ~* \.(?:json)$ {
             expires 1d;
             add_header Cache-Control "public";
         }
-`
+
