@@ -133,3 +133,5 @@ Restart workers
         #       # With php-cgi (or other tcp sockets):
         #       fastcgi_pass 127.0.0.1:9000;
         }
+### NGINX logs
+`cd /var/log/nginx/`
