@@ -75,6 +75,7 @@
 `sudo apt-get install supervisor`
 
 Supervisor conf 
+`
 [program:laravel-worker]
 process_name=%(program_name)s_%(process_num)02d
 command=php /var/www/bikini/source-code/backend/artisan queue:work —sleep=3 —tries=3 —max-time=7200
@@ -86,7 +87,7 @@ user=root
 numprocs=8
 redirect_stderr=true
 stdout_logfile=/var/www/bikini/source-code/backend/public/worker.log
-
+`
 Restart workers 
 
 `stopwaitsecs=3600`
