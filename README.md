@@ -103,6 +103,12 @@ Restart workers
 
 ### For Spa NGINX
 
+        location / {
+            # First attempt to serve request as file, then
+            # as directory, then fall back to redirecting to index.html
+            try_files $uri $uri/ $uri.html /index.html;
+        }
+
         location ~* \.(?:css|js|jpg|svg)$ {
             expires 30d;
             add_header Cache-Control "public";
