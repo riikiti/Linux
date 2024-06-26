@@ -62,7 +62,7 @@
 
 ### LetsEncrypt
 - `apt install certbot python3-certbot-nginx`
-- `certbot —nginx -d security-diplom.ru`
+- `certbot --nginx -d security-diplom.ru`
 
 ### Crontab 
 `crontab -e`
