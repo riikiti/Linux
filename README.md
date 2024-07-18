@@ -70,6 +70,7 @@
 - new sertificate `0 0 * * 1 certbot renew —quiet ` 
 - schedule:run `* * * * * php /var/www/notifications/artisan schedule:run »/dev/null`
 - storage `* * * * * chown -R www-data:www-data /var/www/notifications/storage`
+- reload cron `service cron reload`
 
 ### Supervisor
 `sudo apt-get install supervisor`
